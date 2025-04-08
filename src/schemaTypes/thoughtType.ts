@@ -22,7 +22,33 @@ export const thoughtType = defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{type: 'block'}, {type: 'image'}],
+      of: [
+        {type: 'block'},
+        {type: 'image'},
+        {
+          type: 'file',
+          name: 'video',
+          title: 'Video',
+          options: {
+            accept: 'video/*',
+          },
+          fields: [
+            {
+              name: 'caption',
+              type: 'string',
+              title: 'Caption',
+              description: 'Optional caption for the video',
+            },
+            {
+              name: 'autoplay',
+              type: 'boolean',
+              title: 'Autoplay',
+              description: 'Should the video autoplay when the page loads?',
+              initialValue: false,
+            },
+          ],
+        },
+      ],
     }),
   ],
   preview: {

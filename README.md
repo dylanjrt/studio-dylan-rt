@@ -63,7 +63,10 @@ The studio will be available at `http://localhost:3333`
 ### Thoughts (`thoughtType`)
 - Title
 - URL-friendly slug
-- Rich text content with image support
+- Rich text content with support for:
+  - Text blocks
+  - Images
+  - Videos (with optional captions and autoplay settings)
 
 ## Code Style
 
