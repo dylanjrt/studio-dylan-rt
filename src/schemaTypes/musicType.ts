@@ -12,6 +12,12 @@ export const musicType = defineType({
       validation: (Rule) => Rule.required().error('Title is required'),
     }),
     defineField({
+      name: 'artist',
+      title: 'Artist',
+      type: 'string',
+      validation: (Rule) => Rule.required().error('Artist is required'),
+    }),
+    defineField({
       name: 'albumCover',
       title: 'Album Cover',
       type: 'image',
