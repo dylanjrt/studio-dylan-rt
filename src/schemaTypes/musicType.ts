@@ -54,6 +54,13 @@ export const musicType = defineType({
       description: 'Description of the album, its style, or background',
     }),
     defineField({
+      name: 'credits',
+      title: 'Credits',
+      type: 'array',
+      of: [{type: 'block'}],
+      description: 'Credits for the album',
+    }),
+    defineField({
       name: 'supplementaryPhotos',
       title: 'Supplementary Photos',
       type: 'array',
