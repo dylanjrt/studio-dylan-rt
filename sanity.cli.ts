@@ -10,4 +10,10 @@ export default defineCliConfig({
    * Learn more at https://www.sanity.io/docs/cli#auto-updates
    */
   autoUpdates: true,
+
+  /**
+   * Hostname to use when deploying the studio.
+   * No need to be prompted during deployment.
+   */
+  studioHost: 'dylanrt',
 })
