@@ -19,6 +19,19 @@ export const homeType = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          name: 'caption',
+          title: 'Caption',
+          type: 'string',
+        },
+      ],
+    }),
+    defineField({
       name: 'lastUpdated',
       title: 'Last Updated',
       type: 'datetime',
