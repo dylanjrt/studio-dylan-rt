@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export const videoType = defineType({
-  name: 'video',
-  title: 'Cloudinary Videos',
+  name: 'visual',
+  title: 'Visuals',
   type: 'document',
   fields: [
     defineField({
@@ -11,24 +11,25 @@ export const videoType = defineType({
       type: 'string',
     }),
     defineField({
-      name: 'description',
-      type: 'text',
-      title: 'Description',
+      name: 'caption',
+      type: 'string',
+      title: 'Caption',
     }),
     defineField({
       name: 'url',
       type: 'url',
       title: 'URL',
+      description: 'Cloudinary URL of the video',
       validation: (Rule) =>
         Rule.required()
           .uri({scheme: ['https']})
           .error('Video URL is required and must be HTTPS'),
     }),
     defineField({
-      name: 'poster',
-      type: 'url',
-      title: 'Poster URL',
-      validation: (Rule) => Rule.uri({scheme: ['https']}),
+      name: 'thumbnail',
+      title: 'Thumbnail',
+      type: 'image',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'order',
@@ -38,12 +39,6 @@ export const videoType = defineType({
       validation: (Rule) => Rule.integer().min(0).error('Order must be a non-negative integer'),
     }),
   ],
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'description',
-    },
-  },
   orderings: [
     {
       title: 'Title, A-Z',
